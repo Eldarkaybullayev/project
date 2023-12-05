@@ -63,7 +63,9 @@ function changeBackgroundColor() {
     document.body.style.backgroundColor = randomColor;
 }
 
-
+  document.querySelector('#app').onclick = function(){
+    alert('Вы нажали на кнопку');
+  }
 function getRandomColor() {
     const letters = '0123456789ABCDEF';
     let color = '#';
@@ -72,3 +74,4 @@ function getRandomColor() {
     }
     return color;
 }
+
