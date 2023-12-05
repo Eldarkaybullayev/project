@@ -63,9 +63,6 @@ function changeBackgroundColor() {
     document.body.style.backgroundColor = randomColor;
 }
 
-  document.querySelector('#app').onclick = function(){
-    alert('Вы нажали на кнопку');
-  }
 function getRandomColor() {
     const letters = '0123456789ABCDEF';
     let color = '#';
@@ -74,4 +71,31 @@ function getRandomColor() {
     }
     return color;
 }
+
+document.addEventListener('DOMContentLoaded', function () {
+    const moveButton = document.querySelector('.move-button');
+
+    moveButton.addEventListener('КНОПКА', function () {
+        // Изменяем местоположение кнопки
+        moveButton.style.transform = 'translateX(20px)'; // Измените значение на ваше усмотрение
+    });
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+    const randomMoveButton = document.querySelector('.random-move-button');
+
+    randomMoveButton.addEventListener('mouseover', function () {
+        // Получаем размеры окна просмотра
+        const windowWidth = window.innerWidth;
+        const windowHeight = window.innerHeight;
+
+        // Генерируем рандомные координаты в пределах окна
+        const randomX = Math.floor(Math.random() * (windowWidth - 100)); // 100 - ширина кнопки
+        const randomY = Math.floor(Math.random() * (windowHeight - 40)); // 40 - высота кнопки
+
+        // Изменяем местоположение кнопки
+        randomMoveButton.style.left = `${randomX}px`;
+        randomMoveButton.style.top = `${randomY}px`;
+    });
+});
 
